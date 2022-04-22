@@ -21,6 +21,13 @@ class TestUser(unittest.TestCase):
     self.assertEqual(self.new_user.user_name,"admin")
     self.assertEqual(self.new_user.password,"12345678")
     
+  def test_add_user(self):
+    '''
+    test case to test if a new user instance is added into the user list
+    '''
+    self.new_user.add_user()
+    self.assertEqual(len(User.user_list),1)
+    
 
 if __name__=="__main__":
   unittest.main()
