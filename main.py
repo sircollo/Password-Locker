@@ -26,6 +26,10 @@ def generate_random_password():
   random_password = Credentials.generate_random_password()
   return random_password
 
+def login_user(user_name,password):
+  authenticate_user = Credentials.verify_user(user_name,password)
+  return authenticate_user
+
 def main_function():
   print("Hi there, What is your name?")
   userName = input()
@@ -33,7 +37,7 @@ def main_function():
   print(f"RA --- Register Account \nLI --- Login In")
   short_code = input().lower().strip()
   if short_code == 'ra':
-    print("Register here")
+    print("Register here...")
     print("="*50)
     user_name = input("User name: ")
     while True:
@@ -51,8 +55,20 @@ def main_function():
         
     add_user(create_new_user(user_name,password))
     # print(str(password))
-  
-  
+    print("="*50)
+    print(f"Account Created Successfully!\nUsername:{user_name}\nPassword:{password}")
+    print("="*50)
+    
+  elif short_code == "li":
+    print("Login here...")
+    user_name = input("Enter your username: ")
+    password = input("Enter your password: ")
+    login = login_user(user_name,password)
+    if login_user == login:
+      print(f"{user_name}, Continue to lock your credentials")
+      
+    
+    
 if __name__=="__main__":
   main_function()
 
