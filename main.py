@@ -20,8 +20,15 @@ def display_user():
   Funtion to display a user
   '''
   return User.display_user()
+
+def main_function():
+  print("Hi there, What is your name?")
+  userName = input()
+  print(f"Hi, {userName}. Welcome to the best password locker!\nChoose an option below...")
+  print(f"RA --- Register Account \nLI --- Login In")
   
+  
+if __name__=="__main__":
+  main_function()
 
-
-
-
+  
