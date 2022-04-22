@@ -32,7 +32,9 @@ class TestUser(unittest.TestCase):
     '''
     test_delete_user method to check if user details can be deleted from list
     '''
-    User.user_list.remove(self)
+    self.new_user.add_user()
+    self.new_user.delete_user()
+    self.assertEqual(len(User.user_list),1)
     
 
 if __name__=="__main__":
