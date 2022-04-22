@@ -1,3 +1,5 @@
+import random
+import string
 from user import User
 class Credentials:
   '''
@@ -59,6 +61,29 @@ class Credentials:
     display method that returns all saved credentials of a user
     '''
     return cls.credentials_list
+  
+  #password generator  
+  
+  def generate_random_password():
+    '''
+    method to generate random password for user using character strings, numbers and symbols
+    '''
+    characters = list(string.ascii_letters + string.digits + "!@#$%^&*()")
+    length = int(input("Entepassword length: "))
+    random.shuffle(characters)
+    password = []
+    for i in range(length):
+      password.append(random.choice(characters))
+      
+    random.shuffle(password)
+    print(''.join(password))
+    return password
+  
+
+
+
+    
+    
     
   
     
