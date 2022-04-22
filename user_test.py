@@ -30,7 +30,7 @@ class TestUser(unittest.TestCase):
     
   def test_delete_user(self):
     '''
-    delete_user method to delete saved user details from user list
+    test_delete_user method to check if user details can be deleted from list
     '''
     User.user_list.remove(self)
     
