@@ -13,8 +13,13 @@ def add_user(user):
   '''
   Function to add a new user
   '''
-  user.add_user()
-  
+  User.add_user()
+
+def display_user():
+  '''
+  Funtion to display a user
+  '''
+  return User.display_user()
   
 
 
