@@ -18,6 +18,13 @@ class TestCase(unittest.TestCase):
     self.assertEqual(self.new_credentials.account,"Facebook")
     self.assertEqual(self.new_credentials.account_user_name,"collos")
     self.assertEqual(self.new_credentials.account_password,"fbpassword")
+  
+  def test_save_credentials(self):
+    '''
+    Test case to check if credentials are saved in credentials list
+    '''
+    self.new_credentials.save_credentials()
+    self.assertEqual(len(Credentials.credentials_list),1)
     
 if __name__=="__main__":
   unittest.main()
