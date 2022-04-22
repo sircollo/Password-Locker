@@ -74,7 +74,11 @@ class TestCase(unittest.TestCase):
     is_found = Credentials.is_available("Gmail")
     # self.assertEqual(is_found,"Gmail")
     
-    
+  def test_display_various_credentials(self):
+    '''
+    test case method to check if all credentials saved by a user can be displayed
+    '''
+    self.assertEqual(Credentials.display_various_credentials(),Credentials.credentials_list)
     
     
   
