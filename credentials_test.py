@@ -18,6 +18,11 @@ class TestCase(unittest.TestCase):
     self.assertEqual(self.new_credentials.account,"Facebook")
     self.assertEqual(self.new_credentials.account_user_name,"collos")
     self.assertEqual(self.new_credentials.account_password,"fbpassword")
+  def testaDown(self):
+    '''
+    tearddown method to clean up after each test case has been run
+    '''
+    Credentials.credentials_list = []
   
   def test_save_credentials(self):
     '''
@@ -25,6 +30,8 @@ class TestCase(unittest.TestCase):
     '''
     self.new_credentials.save_credentials()
     self.assertEqual(len(Credentials.credentials_list),1)
+    
+  
     
 if __name__=="__main__":
   unittest.main()
