@@ -15,5 +15,16 @@ class Credentials:
         this_user = user.user_name
         
     return this_user
+  def __init__(self,account,account_user_name,account_password):
+    '''
+    init method that defines user credentials
+    '''
+    self.account = account
+    self.account_user_name = account_user_name
+    self.account_password = account_password
     
-  
+  def save_credentials(self):
+    '''
+    save credentials method to save new credentials to credentials list
+    '''
+    Credentials.credentials_list.append(self)
