@@ -53,6 +53,13 @@ class Credentials:
       if credential.account == account:
         return True
     return False
+  @classmethod
+  def display_various_credentials(cls):
+    '''
+    display method that returns all saved credentials of a user
+    '''
+    return cls.credentials_list
+    
   
     
         
