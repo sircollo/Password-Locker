@@ -160,6 +160,16 @@ def main_function():
             else:
                 print("Account to delete not found")
                 print("="*40)
+        elif short_code == 'q':
+            print("Are you sure you want to quit?")
+            print("Y - to quit application N- to continue")
+            short_code = input().strip().lower()
+            if short_code == "y":
+                break
+            else:
+                continue
+            
+                
         
                         
       
