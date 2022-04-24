@@ -54,6 +54,13 @@ def display_various_accounts():
     Function that returns all the saved credential.
     """
     return Credentials.display_various_credentials()
+  
+def delete_credential(credentials):
+    """
+    Function to delete a Credentials from credentials list
+
+    """
+    credentials.delete_credentials()
 
 def main_function():
     print("Hi there, What is your name?")
@@ -136,11 +143,24 @@ def main_function():
 
                 for account in display_various_accounts():
                     print(f"Account: {account.account} \nUsername: {account_user_name}\nPassword: {account.account_password}")
-                    print('*' * 30)
+                    print('*' * 40)
             else:
                 print("No Credentails saved...")
 
-              
+        elif short_code == "del":
+            print("Enter account name to delete:")
+            search_name = input().lower()
+            if find_credential(search_name):
+                search_credential = find_credential(search_name)
+                print("-"*40)
+                search_credential.delete_credentials()
+                print('\n')
+                print(f"{search_credential.account} successfully deleted!")
+                print('\n')
+            else:
+                print("Account to delete not found")
+                print("="*40)
+        
                         
       
     
