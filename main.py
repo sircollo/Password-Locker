@@ -91,6 +91,7 @@ def main_function():
     print(f"RA --- Register Account \nLI --- Login In")
     short_code = input().lower().strip()
     if short_code == 'ra':
+      print("\n")
       print("Register here...")
       print("="*50)
       user_name = input("User name: ")
@@ -126,7 +127,9 @@ def main_function():
           print("Login Successfull")
           print(f"{user_name}, Continue to lock your credentials")
         else:
-            print("You have not registered, Please enter username and password:")
+            print("="*80)
+            print("You have not registered, Please enter username and password to register:")
+            print("="*80)
             user_name = input("Enter Username: ")
             password = input("Enter Password: ")
             while True:
@@ -144,17 +147,19 @@ def main_function():
 
             add_user(create_new_user(user_name, password))
             # print(str(password))
+            print("\n")
             print("="*50)
             print(
                 f"Account Created Successfully!\nUsername:{user_name}\nPassword:{password}")
             print("="*50)
+            print("\n")
 
     while True:
         print("Use these short codes to continue...\nNC --- New Credentials \nFC --- Find a credential \nVC --- View Credentials \nDel--- Delete account credential \nQ  --- Quit application \n")
         short_code = input().lower().strip()
         if short_code == "nc":
-            print("Create New Credentials")
-            print("="*20)
+            print("\nCreate New Credentials")
+            print("="*40)
             print("Account name: ")
             account = input().lower()
             print("Account's username: ")
@@ -184,13 +189,19 @@ def main_function():
             search_name = input().lower()
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
+                print("\n")
                 print(f"Account Name : {search_credential.account}")
                 print('-' * 40)
                 print(
                     f"User Name: {search_credential.account_user_name} \nPassword : {search_credential.account_password}")
                 print('-' * 40)
+                print("\n")
             else:
+                print("\n")
+                print("*"*40)
                 print("Credentials not found")
+                print("*"*40)
+                print("\n")
         elif short_code == "vc":
             if display_various_accounts():
                 print("Your saved accounts: ")
@@ -200,6 +211,7 @@ def main_function():
                     print(
                         f"Account: {account.account} \nUsername: {account_user_name}\nPassword: {account.account_password}")
                     print('*' * 40)
+                    print("\n")
             else:
                 print("No Credentails saved...")
                 print("\n")
@@ -209,10 +221,10 @@ def main_function():
             search_name = input().lower()
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
-                print("-"*40)
+                print("*"*40)
                 search_credential.delete_credentials()
-                print('\n')
                 print(f"{search_credential.account} successfully deleted!")
+                print("*"*40)
                 print('\n')
             else:
                 print("Account to delete not found")
