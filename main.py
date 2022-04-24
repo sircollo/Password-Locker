@@ -168,6 +168,8 @@ def main_function():
                 break
             else:
                 continue
+        else:
+            print("Invalid option, Please choose from the options below")
             
                 
         
