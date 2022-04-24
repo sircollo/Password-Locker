@@ -42,6 +42,12 @@ def save_credentials(credentials):
     Funtion to save new user credentials
     '''
     credentials.save_credentials()
+    
+def find_credential(account):
+    """
+    Function to search an account name in credentials list
+    """
+    return Credentials.find_credentials_by_account_name(account)
 
 def main_function():
     print("Hi there, What is your name?")
@@ -106,6 +112,18 @@ def main_function():
             print("*"*40)
             print(f"Account Credential saved successfully!\nAccount: {account} \nUsername: {account_user_name}\nPassword: {password}")
             print("*"*40)
+        elif short_code == "fc":
+            print("Enter the Account Name you want to search")
+            search_name = input().lower()
+            if find_credential(search_name):
+                search_credential = find_credential(search_name)
+                print(f"Account Name : {search_credential.account}")
+                print('-' * 40)
+                print(f"User Name: {search_credential.account_user_name} \nPassword :{search_credential.account_password}")
+                print('-' * 40)
+            else:
+                print("Credentials not found")
+
               
                         
       
