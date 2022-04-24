@@ -48,6 +48,12 @@ def find_credential(account):
     Function to search an account name in credentials list
     """
     return Credentials.find_credentials_by_account_name(account)
+  
+def display_various_accounts():
+    """
+    Function that returns all the saved credential.
+    """
+    return Credentials.display_various_credentials()
 
 def main_function():
     print("Hi there, What is your name?")
@@ -119,10 +125,20 @@ def main_function():
                 search_credential = find_credential(search_name)
                 print(f"Account Name : {search_credential.account}")
                 print('-' * 40)
-                print(f"User Name: {search_credential.account_user_name} \nPassword :{search_credential.account_password}")
+                print(f"User Name: {search_credential.account_user_name} \nPassword : {search_credential.account_password}")
                 print('-' * 40)
             else:
                 print("Credentials not found")
+        elif short_code == "vc":
+            if display_various_accounts():
+                print("Your saved accounts: ")                 
+                print('=' * 40)
+
+                for account in display_various_accounts():
+                    print(f"Account: {account.account} \nUsername: {account_user_name}\nPassword: {account.account_password}")
+                    print('*' * 30)
+            else:
+                print("No Credentails saved...")
 
               
                         
